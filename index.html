@@ -10,15 +10,344 @@
 </head>
 <body>
   <!-- MAIN LANDING PAGE -->
-    <div class="main">
-      <h2 class="main__heading">GITHUB FINDER APP</h2>
-      <p class="main__paragraph">Check out the info, repos, followers and much more, just by entering a username!!!</p>
-      <div class="main__input">
-        <input type="text" placeholder="Enter a username" class="main__input--text"/>
-        <input type="submit" value="SEARCH" class="main__input--search"/>
+    <div class="mainy">
+      <h2 class="mainy__heading">GITHUB FINDER APP</h2>
+      <p class="mainy__paragraph">Check out the info, repos, followers and much more, just by entering a username!!!</p>
+      <div class="mainy__input">
+        <input id="text" type="text" placeholder="Enter a username" class="mainy__input--text"/>
+        <input id="submit" type="submit" value="SEARCH" class="mainy__input--search"/>
       </div>
+      <img src="/img/loading.gif" alt="loading" class="loading" />
     </div>
- 
+
+    <!-- PROFILE PAGE -->
+  <div class="wrapper">
+     <!-- HEADER -->
+  <header>
+    <div class="header__left">
+    <div class="header__left--logo">
+    <img src="/img/logo-github.svg" alt="logo" />
+    </div>
+    <div class="header__left--input">
+    <input type="text" placeholder="Search or jump to..." />
+    <div id="input__empty">/</div>
+    </div>
+    <ul class="header__left--list">
+    <li class="header__left--listitem">Pull requests</li>
+    <li class="header__left--listitem">Issues</li>
+    <li class="header__left--listitem">Marketplace</li>
+    <li class="header__left--listitem">Explore</li>
+    </ul>
+  </div>
+  <div class="header__right">
+    <div class="header__right--1">
+      <ion-icon class="icon notifications" name="notifications-outline" title="notifications"></ion-icon>
+    </div>
+    <div class="header__right--2">
+      <ion-icon class="icon add" name="add-outline" title="add"></ion-icon>
+      <ion-icon class="icon caretdown" name="caret-down-outline" title="caretdown"></ion-icon>
+    </div>
+    <div class="header__right--3">
+      <img src="/img/kosh.jpg" alt="profile-image">
+      <ion-icon class="icon caretdown" name="caret-down-outline" title="caretdown"></ion-icon>
+    </div>
+  </div>
+  </header>
+<!-- FEATURES SECTION -->
+  <section class="section">
+     <div class="featuresField">
+     <div class="features__popup">
+       <img src="/img/kosh.jpg" alt="kosh"/>
+       <div class="features__popup--content">
+         <p>jesukoseemani</p>
+         <button type="submit">Follow</button>
+       </div>
+     </div>
+
+    <div class="features">
+     <div class="features__items">
+      <img src="/img/book-outline.svg" class="icon book" alt="overview">
+      <a href="#">Overview</a>
+     </div>
+     <div class="features__items repo">
+      <img src="img/repo.svg" alt="repo">
+      <a href="#">Repositories <span class="features__items--span">45</span></a>
+    </div>
+    <div class="features__items">
+      <img src="/img/browsers-outline.svg" class="icon browser" alt="projects">
+      <a href="#">Projects</a>
+    </div>
+    <div class="features__items">
+      <img src="/img/cube-outline.svg" class="icon browser" alt="packages">
+      <a href="#">Packages</a>
+    </div>
+    </div>
+  </div>
+  </section>
+  
+  <!-- MAIN SECTION -->
+  <section>
+  <div class="main">
+   <div class="main__left">
+   <div class="main__left--img">
+   <img src="/img/kosh.jpg" alt="kosh" />
+   <span class="smiley">
+    <img src="/img/Smiley-512.png" alt="smiley" />
+   </span>
+   </div>
+   <p class="main__left--paragraph">koseemani olowosusi<span>jesukoseemani</span></p>
+   <a href="#" class="main__left--button">Follow</a>
+   <p class="main__left--bio">Frontend Developer and User Interface Designer</p>
+
+   <div class="main__left--ff">
+     <div class="main__left--ff-left">
+      <img src="/img/people-outline.svg" class="icon people" alt="follower|following">
+      <p><strong>2.6k</strong> followers . <strong>26</strong> following .</p>
+     </div>
+     <div class="main__left--ff-right">
+      <img src="/img/star-outline.svg" class="icon star" alt="star">
+      <p><strong>250</strong></p>
+     </div>
+   </div>
+
+   <ul class="main__left--list">
+     <li class="main__left--listitem">
+      <img src="/img/business-outline.svg" class="icon business" alt="business">
+      <p>BuyCoins</p>
+     </li>
+     <li class="main__left--listitem">
+      <img src="/img/location-outline.svg" class="icon location" alt="location">
+      <p>Lagos, Nigeria</p>
+     </li>
+     <li class="main__left--listitem">
+      <img src="/img/link-outline.svg" class="icon link" alt="link">
+      <p><a href="https://www.ireaderinokun.com">https://www.ireaderinokun.com</a></p>
+     </li>
+     <li class="main__left--listitem">
+      <img src="/img/logo-twitter.svg" class="icon twitter" alt="twitter">
+      <p>@ireaderinokun</p>
+     </li>
+   </ul>
+   
+   </div>
+
+   <div class="main__right">
+    <div class="main__right--input">
+      <input type="text" placeholder="Find a repository" disabled/>
+      <div class="main__right--select">
+        <select name="Type" disabled="disabled">
+          <option value="Type">Type</option>
+        </select>
+        <select name="Type" disabled="disabled">
+          <option value="Type">Language</option>
+        </select>
+        <select name="Type" disabled="disabled">
+          <option value="Type">Sort</option>
+        </select>
+      </div> 
+    </div>
+    <div class="main__right--repolists">
+      <div class="repoContent">
+       <h3>real estate whatever</h3>
+       <p>Blockchain Nanodegree Capstone Project - Real Estate Marketplace</p>
+       <div class="main__right--repoinfos">
+         <div class="main__right--repoinfo">
+          
+          <!-- BEFORE SVG-->
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-e</title><path d="M448,256c0-106-86-192-192-192S64,150,64,256s86,192,192,192S448,362,448,256Z" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px"/></svg>
+          
+          <!-- AFTER SVG -->
+          <span>JavaScript</span>
+         </div>
+         <div class="main__right--repoinfo">
+          <img src="/img/star-outline.svg" class="icon star" alt="star">
+          <span class="exclusive">4</span>
+         </div>
+         <div class="main__right--repoinfo">
+          <img src="/img/git-network-outline.svg" class="icon fork" alt="fork">
+          <span class="exclusive">1</span>
+         </div>
+         <div class="main__right--repoinfo">
+           <p>Updated 21 days ago</p>
+         </div>
+       </div>
+      </div>
+      <div class="repoStar" type="submit">
+        <img src="/img/star-outline.svg" class="icon star" alt="star">
+        <span>Star</span>
+      </div>
+      </div>
+
+      <div class="main__right--repolists">
+        <div class="repoContent">
+         <h3>real estate whatever</h3>
+         <p>Blockchain Nanodegree Capstone Project - Real Estate Marketplace</p>
+         <div class="main__right--repoinfos">
+           <div class="main__right--repoinfo">
+            <ion-icon class="icon radio-button" name="radio-button-off-outline" title="radio-button"></ion-icon>
+            <span>JavaScript</span>
+           </div>
+           <div class="main__right--repoinfo">
+            <ion-icon class="icon star" name="star-outline" title="star"></ion-icon>
+            <span>4</span>
+           </div>
+           <div class="main__right--repoinfo">
+            <ion-icon class="icon git-network" name="git-network-outline" title="git-network"></ion-icon>
+            <span>1</span>
+           </div>
+           <div class="main__right--repoinfo">
+             <p>Updated 21 days ago</p>
+           </div>
+         </div>
+        </div>
+        <button class="repoStar" type="submit">
+          <ion-icon class="icon star" name="star-outline" title="star"></ion-icon>
+          <span>4</span>
+        </button>
+        </div>
+
+        <div class="main__right--repolists">
+          <div class="repoContent">
+           <h3>real estate whatever</h3>
+           <p>Blockchain Nanodegree Capstone Project - Real Estate Marketplace</p>
+           <div class="main__right--repoinfos">
+             <div class="main__right--repoinfo">
+              <ion-icon class="icon radio-button" name="radio-button-off-outline" title="radio-button"></ion-icon>
+              <span>JavaScript</span>
+             </div>
+             <div class="main__right--repoinfo">
+              <ion-icon class="icon star" name="star-outline" title="star"></ion-icon>
+              <span>4</span>
+             </div>
+             <div class="main__right--repoinfo">
+              <ion-icon class="icon git-network" name="git-network-outline" title="git-network"></ion-icon>
+              <span>1</span>
+             </div>
+             <div class="main__right--repoinfo">
+               <p>Updated 21 days ago</p>
+             </div>
+           </div>
+          </div>
+          <button class="repoStar" type="submit">
+            <ion-icon class="icon star" name="star-outline" title="star"></ion-icon>
+            <span>4</span>
+          </button>
+          </div>
+
+          <div class="main__right--repolists">
+            <div class="repoContent">
+             <h3>real estate whatever</h3>
+             <p>Blockchain Nanodegree Capstone Project - Real Estate Marketplace</p>
+             <div class="main__right--repoinfos">
+               <div class="main__right--repoinfo">
+                <ion-icon class="icon radio-button" name="radio-button-off-outline" title="radio-button"></ion-icon>
+                <span>JavaScript</span>
+               </div>
+               <div class="main__right--repoinfo">
+                <ion-icon class="icon star" name="star-outline" title="star"></ion-icon>
+                <span>4</span>
+               </div>
+               <div class="main__right--repoinfo">
+                <ion-icon class="icon git-network" name="git-network-outline" title="git-network"></ion-icon>
+                <span>1</span>
+               </div>
+               <div class="main__right--repoinfo">
+                 <p>Updated 21 days ago</p>
+               </div>
+             </div>
+            </div>
+            <button class="repoStar" type="submit">
+              <ion-icon class="icon star" name="star-outline" title="star"></ion-icon>
+              <span>4</span>
+            </button>
+            </div>
+
+            <div class="main__right--repolists">
+              <div class="repoContent">
+               <h3>real estate whatever</h3>
+               <p>Blockchain Nanodegree Capstone Project - Real Estate Marketplace</p>
+               <div class="main__right--repoinfos">
+                 <div class="main__right--repoinfo">
+                  <ion-icon class="icon radio-button" name="radio-button-off-outline" title="radio-button"></ion-icon>
+                  <span>JavaScript</span>
+                 </div>
+                 <div class="main__right--repoinfo">
+                  <ion-icon class="icon star" name="star-outline" title="star"></ion-icon>
+                  <span>4</span>
+                 </div>
+                 <div class="main__right--repoinfo">
+                  <ion-icon class="icon git-network" name="git-network-outline" title="git-network"></ion-icon>
+                  <span>1</span>
+                 </div>
+                 <div class="main__right--repoinfo">
+                   <p>Updated 21 days ago</p>
+                 </div>
+               </div>
+              </div>
+              <button class="repoStar" type="submit">
+                <ion-icon class="icon star" name="star-outline" title="star"></ion-icon>
+                <span>4</span>
+              </button>
+              </div>
+
+              <div class="main__right--repolists">
+                <div class="repoContent">
+                 <h3>real estate whatever</h3>
+                 <p>Blockchain Nanodegree Capstone Project - Real Estate Marketplace</p>
+                 <div class="main__right--repoinfos">
+                   <div class="main__right--repoinfo">
+                    <ion-icon class="icon radio-button" name="radio-button-off-outline" title="radio-button"></ion-icon>
+                    <span>JavaScript</span>
+                   </div>
+                   <div class="main__right--repoinfo">
+                    <ion-icon class="icon star" name="star-outline" title="star"></ion-icon>
+                    <span>4</span>
+                   </div>
+                   <div class="main__right--repoinfo">
+                    <ion-icon class="icon git-network" name="git-network-outline" title="git-network"></ion-icon>
+                    <span>1</span>
+                   </div>
+                   <div class="main__right--repoinfo">
+                     <p>Updated 21 days ago</p>
+                   </div>
+                 </div>
+                </div>
+                <button class="repoStar" type="submit">
+                  <ion-icon class="icon star" name="star-outline" title="star"></ion-icon>
+                  <span>4</span>
+                </button>
+                </div>
+
+   </div>
+  </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <ul class="footer__lists">
+      <li class="footer__listitem">&copy;2021 Github,Inc</li>
+      <li class="footer__listitem"><a href="#">Terms</a></li>
+      <li class="footer__listitem"><a href="#">Privacy</a></li>
+      <li class="footer__listitem"><a href="#">Security</a></li>
+      <li class="footer__listitem"><a href="#">Status</a></li>
+      <li class="footer__listitem"><a href="#">Docs</a></li>
+      
+    </ul>
+
+    <img src="/img/github.png" alt="logo" />
+    
+    <ul class="footer__lists">
+      <li class="footer__listitem"><a href="#">Contact Github</a></li>
+      <li class="footer__listitem"><a href="#">Pricing</a></li>
+      <li class="footer__listitem"><a href="#">API</a></li>
+      <li class="footer__listitem"><a href="#">Training</a></li>
+      <li class="footer__listitem"><a href="#">Blog</a></li>
+      <li class="footer__listitem"><a href="#">About</a></li>
+    </ul>
+  </footer>
+</div>
   <script src="https://unpkg.com/ionicons@5.5.1/dist/ionicons.js"></script>
   <script src="app.js"></script>
 </body>
