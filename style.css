@@ -594,7 +594,7 @@ header {
 }
 
 .main__right {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -636,12 +636,21 @@ header {
 
 .main__right--repolists {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.repoCover {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  border-bottom: 1px solid rgb(177, 177, 177);
+  padding-bottom: 3rem;
   margin: 2rem 0;
-  border-bottom: 1px solid rgb(180, 180, 180);
-  padding-bottom: 1.8rem;
 }
 
 .repoContent {
