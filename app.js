@@ -4,7 +4,6 @@ const ui = new UI;
 
 const features = document.querySelector(".featuresField");
 const popUp = document.querySelector(".features__popup")
-const search = document.querySelector(".search")
 const text = document.querySelector("#text")
 const submit = document.querySelector("#submit")
 const loading = document.querySelector(".loading")
@@ -13,8 +12,7 @@ const mainy = document.querySelector(".mainy")
 
 
 
-const gitApi = "###"
-
+const gitApi = "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"
 
 
 submit.addEventListener("click", showProfileDetails)
@@ -91,7 +89,12 @@ function showProfileDetails(e){
     loading.style.display = "none"
     textInput = ""
 })
-.catch(err => alert(err.message))
+.catch(err => {
+  alert(err.message)
+  loading.style.display = "none"
+  textInput = ""
+
+})
 
 
 
@@ -106,26 +109,20 @@ window.addEventListener("scroll", stickyEffect)
 
 
 function stickyEffect(){
- console.log(features)
-// console.log(wrapper.children[1].children[0].className)
+
+  if(window.scrollY >= 16){
+    wrapper.children[1].children[0].classList.add('fixed');
+    wrapper.children[1].children[0].children[0].style.visibility = "visible";
+    // search.classList.add('remove')
+
+  }else{
+
+    wrapper.children[1].children[0].classList.remove('fixed');
+    wrapper.children[1].children[0].children[0].style.visibility  = "hidden"
+    // search.classList.remove('remove')
+
+  }
 }
-
-
-
-
-// function stickyEffect(){
- 
-//   if(window.scrollY >= 8){
-//     features.classList.add('fixed');
-//     popUp.style.visibility = "visible"
-//     search.classList.add('remove')
-//   }else{
-//     features.classList.remove('fixed');
-//     popUp.style.visibility = "hidden"
-//     search.classList.remove('remove')
-
-//   }
-// }
 
 
 

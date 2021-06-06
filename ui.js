@@ -1,3 +1,8 @@
+function string(num){
+  const string = numeral(num).format('0 a');
+  return string;
+}
+
 class UI {
   constructor(){
     this.profile = document.querySelector('.wrapper');
@@ -7,6 +12,9 @@ class UI {
     this.profile.innerHTML =
     `
     <header>
+    <div class="header-nav">
+    <img src="/img/menu-outline.svg" class="icon menu" alt="menu">
+    </div>
     <div class="header__left">
     <div class="header__left--logo">
     <img src="/img/logo-github.svg" alt="logo" />
@@ -16,7 +24,7 @@ class UI {
     <div id="input__empty">/</div>
     </div>
     <ul class="header__left--list">
-    <li class="header__left--listitem">Pull requests</li>
+    <li class="header__left--listitem">Pull <span class="pull">requests</span></li>
     <li class="header__left--listitem">Issues</li>
     <li class="header__left--listitem">Marketplace</li>
     <li class="header__left--listitem">Explore</li>
@@ -24,11 +32,13 @@ class UI {
   </div>
   <div class="header__right">
     <div class="header__right--1">
-      <ion-icon class="icon notifications" name="notifications-outline" title="notifications"></ion-icon>
+    <img src="/img/backspace-outline.svg" class="icon notification" alt="back">
+    <img src="/img/notifications-outline.svg" class="icon notification" alt="notification">
     </div>
     <div class="header__right--2">
-      <ion-icon class="icon add" name="add-outline" title="add"></ion-icon>
-      <ion-icon class="icon caretdown" name="caret-down-outline" title="caretdown"></ion-icon>
+    <img src="/img/add-outline.svg" class="icon add" alt="add">
+    <img src="/img/caret-down-outline.svg" class="icon arrow-down" alt="arrow-down">
+   
     </div>
     <div class="header__right--3">
       <img src=${data.avatarUrl} alt="profile-image">
@@ -40,7 +50,7 @@ class UI {
   <section class="section">
      <div class="featuresField">
      <div class="features__popup">
-       <img src=${data.avatarUrl} alt="kosh"/>
+       <img src=${data.avatarUrl} alt=${data.name}/>
        <div class="features__popup--content">
          <p>${data.login}</p>
          <button type="submit">Follow</button>
@@ -54,7 +64,7 @@ class UI {
      </div>
      <div class="features__items repo">
       <img src="img/repo.svg" alt="repo">
-      <a href="#">Repositories <span class="features__items--span">45</span></a>
+      <a href="#">Repositories <span class="features__items--span">${data.repositories.totalCount}</span></a>
     </div>
     <div class="features__items">
       <img src="/img/browsers-outline.svg" class="icon browser" alt="projects">
@@ -72,6 +82,7 @@ class UI {
   <section>
   <div class="main">
    <div class="main__left">
+   <div class="main__left--rap">
    <div class="main__left--img">
    <img src=${data.avatarUrl} alt="kosh" />
    <span class="smiley">
@@ -79,13 +90,15 @@ class UI {
    </span>
    </div>
    <p class="main__left--paragraph">${data.name}<span>${data.login}</span></p>
+   </div>
    <a href="#" class="main__left--button">Follow</a>
+   
    <p class="main__left--bio">${data.bio}</p>
 
    <div class="main__left--ff">
      <div class="main__left--ff-left">
       <img src="/img/people-outline.svg" class="icon people" alt="follower|following">
-      <p><strong>${data.followers.totalCount}</strong> followers . <strong>${data.following.totalCount}</strong> following .</p>
+      <p><strong>${string(data.followers.totalCount)}</strong> followers . <strong>${string(data.following.totalCount)}</strong> following .</p>
      </div>
      <div class="main__left--ff-right">
       <img src="/img/star-outline.svg" class="icon star" alt="star">
@@ -172,7 +185,7 @@ class UI {
 
    repo.repositories.nodes.forEach((repo) => {
      output += `
-     <div class="repoCover">
+   <div class="repoCover">
 <div class="repoContent">
 <h3>${repo.name}</h3>
 <p>${repo.description}</p>
