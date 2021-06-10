@@ -12,10 +12,15 @@ const mainy = document.querySelector(".mainy")
 
 
 
-const gitApi = "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"
+
+const gitApi = "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"
 
 
 submit.addEventListener("click", showProfileDetails)
+
+
+
+
 
 
 function showProfileDetails(e){
@@ -81,6 +86,7 @@ function showProfileDetails(e){
 .then(data => {
     ui.showProfile(data.data.user)
     ui.showRepo(data.data.user)
+    console.log(data.data.user)
    return data
 })
 .then(() => {
@@ -105,7 +111,7 @@ function showProfileDetails(e){
 
 
 window.addEventListener("scroll", stickyEffect)
-
+wrapper.addEventListener("click", goBackToHomePage)
 
 
 function stickyEffect(){
@@ -124,6 +130,14 @@ function stickyEffect(){
   }
 }
 
+function goBackToHomePage(e){
+if(e.target.parentElement.classList.contains("header__right--1")){
+  wrapper.style.display="none"
+  // mainy.style.display="block"
+  window.location.reload();
+}
 
+
+}
 
 

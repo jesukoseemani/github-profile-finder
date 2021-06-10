@@ -41,7 +41,7 @@ class UI {
    
     </div>
     <div class="header__right--3">
-      <img src=${data.avatarUrl} alt="profile-image">
+      <img src=${data.avatarUrl ? data.avatarUrl : "https://assets.webiconspng.com/uploads/2016/12/User-PNG-Icon.png" } alt="profile-image">
       <ion-icon class="icon caretdown" name="caret-down-outline" title="caretdown"></ion-icon>
     </div>
   </div>
@@ -50,7 +50,7 @@ class UI {
   <section class="section">
      <div class="featuresField">
      <div class="features__popup">
-       <img src=${data.avatarUrl} alt=${data.name}/>
+       <img src=${data.avatarUrl ? data.avatarUrl : "https://assets.webiconspng.com/uploads/2016/12/User-PNG-Icon.png"} alt=${data.name}/>
        <div class="features__popup--content">
          <p>${data.login}</p>
          <button type="submit">Follow</button>
@@ -84,7 +84,7 @@ class UI {
    <div class="main__left">
    <div class="main__left--rap">
    <div class="main__left--img">
-   <img src=${data.avatarUrl} alt="kosh" />
+   <img src=${data.avatarUrl ? data.avatarUrl : "https://assets.webiconspng.com/uploads/2016/12/User-PNG-Icon.png"} alt="kosh" />
    <span class="smiley">
     <img src="/img/Smiley-512.png" alt="smiley" />
    </span>
@@ -93,7 +93,7 @@ class UI {
    </div>
    <a href="#" class="main__left--button">Follow</a>
    
-   <p class="main__left--bio">${data.bio}</p>
+   <p class="main__left--bio">${data.bio ? data.bio : ""}</p>
 
    <div class="main__left--ff">
      <div class="main__left--ff-left">
@@ -108,19 +108,19 @@ class UI {
    <ul class="main__left--list">
      <li class="main__left--listitem">
       <img src="/img/business-outline.svg" class="icon business" alt="business">
-      <p>${data.company}</p>
+      <p>${data.company  ? data.company : ""}</p>
      </li>
      <li class="main__left--listitem">
       <img src="/img/location-outline.svg" class="icon location" alt="location">
-      <p>${data.location}</p>
+      <p>${data.location ? data.location : ""}</p>
      </li>
      <li class="main__left--listitem">
       <img src="/img/link-outline.svg" class="icon link" alt="link">
-      <p><a href=${data.websiteUrl}>${data.websiteUrl}</a></p>
+      <p><a href=${data.websiteUrl ? data.websiteUrl : "#"}>${data.websiteUrl ? data.websiteUrl : ""}</a></p>
      </li>
      <li class="main__left--listitem">
       <img src="/img/logo-twitter.svg" class="icon twitter" alt="twitter">
-      <p>${data.twitterUsername}</p>
+      <p>${data.twitterUsername ? data.twitterUsername : ""}</p>
      </li>
    </ul>
    
@@ -188,17 +188,20 @@ class UI {
    <div class="repoCover">
 <div class="repoContent">
 <h3>${repo.name}</h3>
-<p>${repo.description}</p>
+<p>${repo.description ? repo.description : ""}</p>
 <div class="main__right--repoinfos">
+  
   <div class="main__right--repoinfo">
    
    <!-- BEFORE SVG-->
 
-   <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-e</title><path d="M448,256c0-106-86-192-192-192S64,150,64,256s86,192,192,192S448,362,448,256Z" style="fill:${repo.primaryLanguage.color};stroke:${repo.primaryLanguage.color};stroke-miterlimit:10;stroke-width:32px"/></svg>
+   <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-e</title><path d="M448,256c0-106-86-192-192-192S64,150,64,256s86,192,192,192S448,362,448,256Z" style="fill:${repo.primaryLanguage ? repo.primaryLanguage.color : "#724444" };stroke:${repo.primaryLanguage ? repo.primaryLanguage.color : "#724444"};stroke-miterlimit:10;stroke-width:32px"/></svg>
    
    <!-- AFTER SVG -->
-   <span>${repo.primaryLanguage.name}</span>
+
+   <span>${repo.primaryLanguage ? repo.primaryLanguage.name : "nil" }</span>
   </div>
+
   <div class="main__right--repoinfo">
    <img src="/img/star-outline.svg" class="icon star" alt="star">
    <span class="exclusive">${repo.stargazerCount}</span>
@@ -208,7 +211,7 @@ class UI {
    <span class="exclusive">${repo.forkCount}</span>
   </div>
   <div class="main__right--repoinfo">
-    <p>Updated ${repo.updatedAt}</p>
+    <p>Updated ${moment(repo.updatedAt).fromNow()}</p>
   </div>
 </div>
 </div>

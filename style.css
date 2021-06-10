@@ -92,9 +92,9 @@ h4 {
   margin-top: -4rem;
   letter-spacing: 1rem;
   text-align: center;
-  animation: moveInLeft 3s ease;
+  /* animation: moveInLeft 3s ease;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  backface-visibility: hidden; */
 }
 
 .mainy__paragraph {
@@ -1062,5 +1062,49 @@ header img {
   }
   .footer__listitem a {
     margin-left: 2rem;
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-13rem);
+  }
+
+  80% {
+    transform: translateX(2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(13rem);
+  }
+
+  80% {
+    transform: translateX(-2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(7rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
   }
 }
